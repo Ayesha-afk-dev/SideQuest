@@ -52,36 +52,35 @@
         transition: 0.3s;
     }
 
-    /* SIDEBAR */
-    #sidebar {
+    /* DROPDOWN MENU */
+    #dropdown-menu {
         position: fixed;
-        top: 0;
-        left: -260px;
-        width: 260px;
-        height: 100vh;
+        top: 70px; /* directly under header */
+        right: 0;
+        width: 100%;
         background: white;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-        padding: 80px 20px;
-        transition: left 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: none;
+        flex-direction: column;
+        padding: 10px 0;
         z-index: 999;
     }
 
-    #sidebar a {
-        display: block;
-        margin: 18px 0;
-        font-size: 1.2rem;
-        color: #7a3fa0;
+    #dropdown-menu a {
+        padding: 14px 20px;
         text-decoration: none;
+        color: #7a3fa0;
+        font-size: 1.2rem;
         font-weight: 500;
+    }
+
+    #dropdown-menu a:hover {
+        background: #ffe6f4;
     }
 
     /* PAGE CONTENT */
     .content {
         padding: 100px 20px;
-    }
-
-    .open {
-        left: 0 !important;
     }
 </style>
 </head>
@@ -98,13 +97,13 @@
     </div>
 </header>
 
-<!-- SIDEBAR MENU -->
-<div id="sidebar">
+<!-- DROPDOWN MENU -->
+<nav id="dropdown-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="quests.html">Quests</a>
     <a href="contact.html">Contact</a>
-</div>
+</nav>
 
 <!-- PAGE CONTENT -->
 <div class="content">
@@ -114,7 +113,8 @@
 
 <script>
 function toggleMenu() {
-    document.getElementById("sidebar").classList.toggle("open");
+    const menu = document.getElementById("dropdown-menu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 </script>
 
