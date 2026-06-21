@@ -52,19 +52,20 @@
         transition: 0.3s;
     }
 
-    /* DROPDOWN MENU */
-    #dropdown-menu {
-        position: fixed;
-        top: 70px; /* directly under header */
-        right: 0;
-        width: 100%;
-        background: white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        display: none;
-        flex-direction: column;
-        padding: 10px 0;
-        z-index: 999;
-    }
+ #dropdown-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+    width: 180px; /* small box */
+    z-index: 999;
+}
+
 
     #dropdown-menu a {
         padding: 14px 20px;
