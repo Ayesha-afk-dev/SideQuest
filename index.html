@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Side Quest — Home</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Fredoka", sans-serif;
+        background: #fdf7f2;
+        overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+        height: 70px;
+        background: #ffd6e8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #7a3fa0;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+        width: 30px;
+        height: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        height: 4px;
+        background: #7a3fa0;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    /* SIDEBAR */
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        height: 100vh;
+        background: white;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        padding: 80px 20px;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    #sidebar a {
+        display: block;
+        margin: 18px 0;
+        font-size: 1.2rem;
+        color: #7a3fa0;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    /* PAGE CONTENT */
+    .content {
+        padding: 100px 20px;
+    }
+
+    .open {
+        left: 0 !important;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Side Quest</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<!-- SIDEBAR MENU -->
+<div id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="quests.html">Quests</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="content">
+    <h1>Welcome to Side Quest</h1>
+    <p>This is your homepage. Add your intro, artwork, buttons, or animations here.</p>
+</div>
+
+<script>
+function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
